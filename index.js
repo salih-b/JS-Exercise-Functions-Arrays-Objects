@@ -340,15 +340,24 @@ const argTimesTwo = (num) => {
  * COMPLETING ALL NON-STRETCH CHALLENGES IN THE REPOSITORY!
  * 
  * @instructions
- * This function takes a single odometer argument (a number) and returns an object.
+ * This function takes a single odometer argument (a number) and returns an 
+ * object.
  * The returned object has the following characteristics:
  *     it has an `odometer` property that contains the argument passed in.
  *     it has a `drive` method that takes a distance as its argument, and
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
 */
-function carMaker(/* code here */) {
+function carMaker(number) {
   /* code here */
+  let obj = {
+    odometer: number,
+    drive: function(distance){
+      this.odometer += distance;
+      return this.odometer;
+    }
+  }
+return obj;
 }
 
 /// ////// END OF CHALLENGE /////////
