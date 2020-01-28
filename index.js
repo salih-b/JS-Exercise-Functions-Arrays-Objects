@@ -62,15 +62,17 @@ function makePersonObject(id, name, email) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
+function getName(obj) {
   /* code here */
+  return "Hello, my name is " + obj.name;
 }
 
 /**
  * ### Challenge `makeSmartPerson`
  * 
  * @instructions
- * This function takes a single `name` argument and returns an object.
+ * This function takes a single `name` argument and returns an 
+ * object.
  * The returned object has the following characteristics:
  *     It has a `name` property that contains the argument passed in.
  *     It has a `sum` method that takes two numbers as arguments
@@ -79,8 +81,18 @@ function getName(/* code here */) {
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
+function makeSmartPerson(name1) {
   /* code here */
+  var makesmart = {
+    name: name1,
+    sum: function(num1, num2){
+      return num1 + num2;
+    },
+    speak: function(){
+      return "Hello, my name is " + this.name;
+    }
+  }
+  return makesmart;
 }
 
 
